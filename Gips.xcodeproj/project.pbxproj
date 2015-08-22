@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0045B48E1B8507CE00A8DFEC /* GipsScript.command in Resources */ = {isa = PBXBuildFile; fileRef = 0045B48D1B8507CE00A8DFEC /* GipsScript.command */; };
 		00E3CDD41B83F85900512EEB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3CDD31B83F85900512EEB /* AppDelegate.m */; };
 		00E3CDD61B83F85900512EEB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3CDD51B83F85900512EEB /* main.m */; };
 		00E3CDD91B83F85900512EEB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3CDD81B83F85900512EEB /* ViewController.m */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0045B48D1B8507CE00A8DFEC /* GipsScript.command */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = GipsScript.command; sourceTree = SOURCE_ROOT; };
 		00E3CDCD1B83F85900512EEB /* Gips.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gips.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E3CDD11B83F85900512EEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E3CDD21B83F85900512EEB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				00E3CDD31B83F85900512EEB /* AppDelegate.m */,
 				00E3CDD71B83F85900512EEB /* ViewController.h */,
 				00E3CDD81B83F85900512EEB /* ViewController.m */,
+				0045B48D1B8507CE00A8DFEC /* GipsScript.command */,
 				00E3CDDA1B83F85900512EEB /* Images.xcassets */,
 				00E3CDDC1B83F85900512EEB /* Main.storyboard */,
 				00E3CDD01B83F85900512EEB /* Supporting Files */,
@@ -196,6 +199,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0045B48E1B8507CE00A8DFEC /* GipsScript.command in Resources */,
 				00E3CDDB1B83F85900512EEB /* Images.xcassets in Resources */,
 				00E3CDDE1B83F85900512EEB /* Main.storyboard in Resources */,
 			);
@@ -407,6 +411,7 @@
 				00E3CDEF1B83F85900512EEB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		00E3CDF01B83F85900512EEB /* Build configuration list for PBXNativeTarget "GipsTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +420,7 @@
 				00E3CDF21B83F85900512EEB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
