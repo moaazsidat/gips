@@ -141,7 +141,7 @@
         return NULL;
     }
     
-    // Create an image from the frist item in the image source
+    // Create an image from the frist item in the image source & checkc if it is created
     myImage = CGImageSourceCreateImageAtIndex(myImageSrc, 0, NULL);
     
     if (myImage == NULL) {

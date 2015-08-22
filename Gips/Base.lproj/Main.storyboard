@@ -672,16 +672,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="340" height="230"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <pathControl verticalHuggingPriority="750" fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="daR-nQ-9pI">
-                                <rect key="frame" x="105" y="192" width="218" height="22"/>
-                                <pathCell key="cell" controlSize="small" selectable="YES" editable="YES" alignment="left" pathStyle="popUp" id="I0I-tF-nYt">
-                                    <font key="font" metaFont="smallSystem"/>
-                                    <url key="url" string="file:///Users/moaazsidat/Development/OSX%20Projects/Gips%20v0/Test%20Images/Boston%20City%20Flow2.jpg"/>
-                                </pathCell>
-                                <connections>
-                                    <action selector="fileSelected:" target="XfG-lQ-9wD" id="ufo-fE-pwh"/>
-                                </connections>
-                            </pathControl>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eNE-VY-3bp">
                                 <rect key="frame" x="18" y="196" width="84" height="14"/>
                                 <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Choose image:" id="4Xj-T4-bpC">
@@ -745,8 +735,8 @@
                                 </textFieldCell>
                             </textField>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lGT-8l-QpK">
-                                <rect key="frame" x="17" y="90" width="163" height="20"/>
-                                <buttonCell key="cell" type="check" title="Retain original proportions" bezelStyle="regularSquare" imagePosition="left" controlSize="small" enabled="NO" state="on" inset="2" id="tK4-Vp-jqt">
+                                <rect key="frame" x="17" y="90" width="176" height="20"/>
+                                <buttonCell key="cell" type="check" title="Maintain original aspect ratio" bezelStyle="regularSquare" imagePosition="left" controlSize="small" enabled="NO" state="on" inset="2" id="tK4-Vp-jqt">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="smallSystem"/>
                                 </buttonCell>
@@ -772,6 +762,28 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <pathControl verticalHuggingPriority="750" fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="daR-nQ-9pI">
+                                <rect key="frame" x="105" y="192" width="218" height="22"/>
+                                <pathCell key="cell" controlSize="small" selectable="YES" editable="YES" alignment="left" placeholderString="Choose image" pathStyle="popUp" id="I0I-tF-nYt">
+                                    <font key="font" metaFont="smallSystem"/>
+                                    <allowedTypes>
+                                        <string>jpg</string>
+                                        <string>png</string>
+                                        <string>jpeg</string>
+                                        <string>tiff</string>
+                                        <string>psd</string>
+                                        <string>gif</string>
+                                        <string>pict</string>
+                                        <string>bmp</string>
+                                        <string>qtif</string>
+                                        <string>sgi</string>
+                                        <string>tga</string>
+                                    </allowedTypes>
+                                </pathCell>
+                                <connections>
+                                    <action selector="fileSelected:" target="XfG-lQ-9wD" id="ufo-fE-pwh"/>
+                                </connections>
+                            </pathControl>
                         </subviews>
                     </view>
                     <connections>
