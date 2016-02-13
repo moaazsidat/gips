@@ -90,7 +90,7 @@
 //    NSLog(@"%.f", floor(nowEpochSeconds*1000000));
     
 //    [self createCGImageFromFile:imageLocation];
-    
+    NSString *imageName = [imageLocation lastPathComponent];
     NSString *newImageLocationPath = [[self.imageURL path] stringByDeletingPathExtension];
 //    NSLog(@"%@", newImageLocationPath);
     NSString *imageExtension = [self.imageURL pathExtension];
@@ -120,11 +120,19 @@
         [arguments addObject:newImageLocation];
 //        [arguments addObject:@"/Users/moaazsidat/Development/OSX Projects/Gips v0/Test Images/Pensive Parakeet2.jpg"];
     }
-    
-    
-    
-    
     [self runScript:arguments];
+    
+    /* Send notification to NotificationCenter */
+    NSUserNotification *notification = [[NSUserNotification alloc] init];
+    notification.title = [NSString stringWithFormat:@"Resizing %@", imageName];
+    notification.informativeText = [NSString stringWithFormat:
+                                    @"%@ has been resized to %@x%@ pixels (click to view).",
+                                    imageName,
+                                    [self.imageHeight stringValue],
+                                    [self.imageWidth stringValue]];
+    notification.soundName = NSUserNotificationDefaultSoundName;
+    notification.userInfo = @{ @"newImageLocation":newImageLocation};
+    [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
 }
 
 - (void) runScript:(NSArray*)arguments {

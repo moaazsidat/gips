@@ -16,6 +16,7 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
+    [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
@@ -26,6 +27,19 @@
     NSLog(@"Filename via Open file: %@", filename);
     [[NSNotificationCenter defaultCenter] postNotificationName:@"openFileWithApp" object:filename];
     return YES;
+}
+
+- (BOOL)userNotificationCenter:(NSUserNotificationCenter *)center shouldPresentNotification:(NSUserNotification *)notification {
+    return YES;
+}
+
+- (void)userNotificationCenter:(NSUserNotificationCenter *)center didActivateNotification:(NSUserNotification *)notification {
+    NSString* newImageLocation = notification.userInfo[@"newImageLocation"];
+    NSURL *newImageURL = [NSURL fileURLWithPath:newImageLocation];
+//    NSLog(@"new image location: %@ and URL: %@", newImageLocation, [newImageURL path]);
+    NSArray *imageURLs = [NSArray arrayWithObjects:newImageURL, nil];
+    [[NSWorkspace sharedWorkspace] activateFileViewerSelectingURLs:imageURLs];
+//    NSRunAlertPanel(@"Hello, Gips", [newImageURL path], @"Ok", nil, nil);
 }
 
 @end

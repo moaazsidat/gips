@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Gips/ViewController.m"
-            timestampString = "475815120.990553"
+            timestampString = "477094349.79966"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "163"
-            endingLineNumber = "163"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
             landmarkName = "-createCGImageFromFile:"
             landmarkType = "5">
          </BreakpointContent>
