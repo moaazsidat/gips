@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0045B48E1B8507CE00A8DFEC /* GipsScript.command in Resources */ = {isa = PBXBuildFile; fileRef = 0045B48D1B8507CE00A8DFEC /* GipsScript.command */; };
+		006E0A581C35FA4F005BBFA4 /* FinderSync.m in Sources */ = {isa = PBXBuildFile; fileRef = 006E0A571C35FA4F005BBFA4 /* FinderSync.m */; };
+		006E0A5C1C35FA4F005BBFA4 /* GipsFinderExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 006E0A521C35FA4F005BBFA4 /* GipsFinderExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		00E3CDD41B83F85900512EEB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3CDD31B83F85900512EEB /* AppDelegate.m */; };
 		00E3CDD61B83F85900512EEB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3CDD51B83F85900512EEB /* main.m */; };
 		00E3CDD91B83F85900512EEB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3CDD81B83F85900512EEB /* ViewController.m */; };
@@ -17,6 +19,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		006E0A5A1C35FA4F005BBFA4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 00E3CDC51B83F85900512EEB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 006E0A511C35FA4F005BBFA4;
+			remoteInfo = GipsFinderExtension;
+		};
 		00E3CDE41B83F85900512EEB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 00E3CDC51B83F85900512EEB /* Project object */;
@@ -26,8 +35,28 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		006E0A601C35FA4F005BBFA4 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				006E0A5C1C35FA4F005BBFA4 /* GipsFinderExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0045B48D1B8507CE00A8DFEC /* GipsScript.command */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = GipsScript.command; sourceTree = SOURCE_ROOT; };
+		006E0A521C35FA4F005BBFA4 /* GipsFinderExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = GipsFinderExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		006E0A551C35FA4F005BBFA4 /* GipsFinderExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = GipsFinderExtension.entitlements; sourceTree = "<group>"; };
+		006E0A561C35FA4F005BBFA4 /* FinderSync.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FinderSync.h; sourceTree = "<group>"; };
+		006E0A571C35FA4F005BBFA4 /* FinderSync.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FinderSync.m; sourceTree = "<group>"; };
+		006E0A591C35FA4F005BBFA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		006E0A611C360381005BBFA4 /* Gips.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Gips.entitlements; sourceTree = "<group>"; };
 		00E3CDCD1B83F85900512EEB /* Gips.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gips.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E3CDD11B83F85900512EEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E3CDD21B83F85900512EEB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -43,6 +72,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		006E0A4F1C35FA4F005BBFA4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		00E3CDCA1B83F85900512EEB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -60,11 +96,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		006E0A531C35FA4F005BBFA4 /* GipsFinderExtension */ = {
+			isa = PBXGroup;
+			children = (
+				006E0A561C35FA4F005BBFA4 /* FinderSync.h */,
+				006E0A571C35FA4F005BBFA4 /* FinderSync.m */,
+				006E0A591C35FA4F005BBFA4 /* Info.plist */,
+				006E0A541C35FA4F005BBFA4 /* Supporting Files */,
+			);
+			path = GipsFinderExtension;
+			sourceTree = "<group>";
+		};
+		006E0A541C35FA4F005BBFA4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				006E0A551C35FA4F005BBFA4 /* GipsFinderExtension.entitlements */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		00E3CDC41B83F85900512EEB = {
 			isa = PBXGroup;
 			children = (
 				00E3CDCF1B83F85900512EEB /* Gips */,
 				00E3CDE61B83F85900512EEB /* GipsTests */,
+				006E0A531C35FA4F005BBFA4 /* GipsFinderExtension */,
 				00E3CDCE1B83F85900512EEB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -74,6 +130,7 @@
 			children = (
 				00E3CDCD1B83F85900512EEB /* Gips.app */,
 				00E3CDE31B83F85900512EEB /* GipsTests.xctest */,
+				006E0A521C35FA4F005BBFA4 /* GipsFinderExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -81,6 +138,7 @@
 		00E3CDCF1B83F85900512EEB /* Gips */ = {
 			isa = PBXGroup;
 			children = (
+				006E0A611C360381005BBFA4 /* Gips.entitlements */,
 				00E3CDD21B83F85900512EEB /* AppDelegate.h */,
 				00E3CDD31B83F85900512EEB /* AppDelegate.m */,
 				00E3CDD71B83F85900512EEB /* ViewController.h */,
@@ -122,6 +180,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		006E0A511C35FA4F005BBFA4 /* GipsFinderExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 006E0A5F1C35FA4F005BBFA4 /* Build configuration list for PBXNativeTarget "GipsFinderExtension" */;
+			buildPhases = (
+				006E0A4E1C35FA4F005BBFA4 /* Sources */,
+				006E0A4F1C35FA4F005BBFA4 /* Frameworks */,
+				006E0A501C35FA4F005BBFA4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GipsFinderExtension;
+			productName = GipsFinderExtension;
+			productReference = 006E0A521C35FA4F005BBFA4 /* GipsFinderExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		00E3CDCC1B83F85900512EEB /* Gips */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E3CDED1B83F85900512EEB /* Build configuration list for PBXNativeTarget "Gips" */;
@@ -129,10 +204,12 @@
 				00E3CDC91B83F85900512EEB /* Sources */,
 				00E3CDCA1B83F85900512EEB /* Frameworks */,
 				00E3CDCB1B83F85900512EEB /* Resources */,
+				006E0A601C35FA4F005BBFA4 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				006E0A5B1C35FA4F005BBFA4 /* PBXTargetDependency */,
 			);
 			name = Gips;
 			productName = Gips;
@@ -166,8 +243,21 @@
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = MS;
 				TargetAttributes = {
+					006E0A511C35FA4F005BBFA4 = {
+						CreatedOnToolsVersion = 7.1.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.Mac = {
+								enabled = 1;
+							};
+						};
+					};
 					00E3CDCC1B83F85900512EEB = {
 						CreatedOnToolsVersion = 6.3.2;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.Mac = {
+								enabled = 1;
+							};
+						};
 					};
 					00E3CDE21B83F85900512EEB = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -190,11 +280,19 @@
 			targets = (
 				00E3CDCC1B83F85900512EEB /* Gips */,
 				00E3CDE21B83F85900512EEB /* GipsTests */,
+				006E0A511C35FA4F005BBFA4 /* GipsFinderExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		006E0A501C35FA4F005BBFA4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		00E3CDCB1B83F85900512EEB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -215,6 +313,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		006E0A4E1C35FA4F005BBFA4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				006E0A581C35FA4F005BBFA4 /* FinderSync.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		00E3CDC91B83F85900512EEB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -236,6 +342,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		006E0A5B1C35FA4F005BBFA4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 006E0A511C35FA4F005BBFA4 /* GipsFinderExtension */;
+			targetProxy = 006E0A5A1C35FA4F005BBFA4 /* PBXContainerItemProxy */;
+		};
 		00E3CDE51B83F85900512EEB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 00E3CDCC1B83F85900512EEB /* Gips */;
@@ -255,6 +366,35 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		006E0A5D1C35FA4F005BBFA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = GipsFinderExtension/GipsFinderExtension.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_TESTABILITY = YES;
+				INFOPLIST_FILE = GipsFinderExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = self.edu.moaaz.Gips.GipsFinderExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		006E0A5E1C35FA4F005BBFA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = GipsFinderExtension/GipsFinderExtension.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = GipsFinderExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = self.edu.moaaz.Gips.GipsFinderExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		00E3CDEB1B83F85900512EEB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -338,6 +478,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Gips/Gips.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Gips/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -349,6 +490,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Gips/Gips.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Gips/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -395,6 +537,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		006E0A5F1C35FA4F005BBFA4 /* Build configuration list for PBXNativeTarget "GipsFinderExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				006E0A5D1C35FA4F005BBFA4 /* Debug */,
+				006E0A5E1C35FA4F005BBFA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		00E3CDC81B83F85900512EEB /* Build configuration list for PBXProject "Gips" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

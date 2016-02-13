@@ -10,19 +10,24 @@
 #import <ImageIO/ImageIO.h>
 
 
-@interface ViewController : NSViewController
-@property (weak) IBOutlet NSPathControl *imagePath;
+@interface ViewController : NSViewController <NSApplicationDelegate>
+//@property (weak) IBOutlet NSPathControl *imagePath;
 @property (weak) IBOutlet NSButton *exportButton;
 @property (weak) IBOutlet NSTextField *imageHeight;
 @property (weak) IBOutlet NSTextField *imageWidth;
+@property (weak) IBOutlet NSButton *maintainRatio;
+@property (weak) IBOutlet NSTextField *chosenFile;
+@property (weak) IBOutlet NSImageView *chosenImage;
 
 /* Actions */
 
-- (IBAction)fileSelected:(id)sender;
+//- (IBAction)fileSelected:(id)sender;
+- (IBAction)openImage:(id)sender;
 - (IBAction)heightChanged:(id)sender;
 - (IBAction)widthChanged:(id)sender;
 - (IBAction)gipsImage:(id)sender;
 
+- (BOOL)application:(NSApplication *)sender openFile:(NSString *)filename;
 
 /* NSTask */
 @property (nonatomic, strong) __block NSTask *gipsTask;
@@ -30,9 +35,11 @@
 @property (nonatomic) BOOL isImage;
 
 /* Image file */
-@property (nonatomic) NSArray *aspectRatio;
+@property (weak) NSURL* imageURL;
 @property (nonatomic) int width;
 @property (nonatomic) int height;
+
+- (BOOL) openFileWithApp:(NSNotification *)notification;
 
 @end
 

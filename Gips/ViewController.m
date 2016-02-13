@@ -12,9 +12,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.aspectRatio = [[NSArray alloc] initWithObjects:0, 0, nil];
     
     // Do any additional setup after loading the view.
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(openFileWithApp:) name:@"openFileWithApp" object:nil];
 }
 
 - (void)setRepresentedObject:(id)representedObject {
@@ -22,17 +22,44 @@
 
     // Update the view, if already loaded.
 }
-
-- (IBAction)fileSelected:(id)sender {
-    NSString *imageLocation = [self.imagePath.URL path];
-        NSLog(@"%@", imageLocation);
-    
+- (BOOL) openFileWithApp:(NSNotification *)notification {
+    NSString *imageLocation = [notification object];
+    NSLog(@"Yaaay");
     [self createCGImageFromFile:imageLocation];
+    return YES;
+}
+//- (IBAction)fileSelected:(id)sender {
+//    NSString *imageLocation = [self.imagePath.URL path];
+//    NSLog(@"%@", imageLocation);
+//    
+//    [self createCGImageFromFile:imageLocation];
+//}
+
+- (IBAction)openImage:(id)sender {
+    NSOpenPanel *panel = [NSOpenPanel openPanel];
+//    [panel setAllowedFileTypes:[NSImage imageFileTypes]];
+    
+    [panel beginWithCompletionHandler:^(NSInteger result){
+        if (result == NSFileHandlingPanelOKButton) {
+            NSURL *imagePath = [[panel URLs] objectAtIndex:0];
+            self.imageURL = imagePath;
+            NSString *imageLocation = [imagePath path];
+            // Open  the document.
+            NSLog(@"Open file panel: %@", imageLocation);
+            [self createCGImageFromFile:imageLocation];
+            NSLog(@"Self imageURL is: %@", self.imageURL);
+        }
+    }];
+}
+
+- (BOOL)application:(NSApplication *)sender openFile:(NSString *)filename {
+    NSLog(@"Filename via Open file: %@", filename);
+    return YES;
 }
 
 - (IBAction)heightChanged:(id)sender {
     NSLog(@"height changed");
-    if ([[self.imageHeight stringValue] length]) {
+    if ([[self.imageHeight stringValue] length] && [self.maintainRatio state]) {
         int heightValue = [[self.imageHeight stringValue] intValue];
         int widthValue = (heightValue * [self width]) / [self height];
         NSLog(@"%d, %d, %d", widthValue, self.width, self.height);
@@ -43,7 +70,7 @@
 
 - (IBAction)widthChanged:(id)sender {
     NSLog(@"width changed");
-    if ([[self.imageWidth stringValue] length]) {
+    if ([[self.imageWidth stringValue] length] && [self.maintainRatio state]) {
         int widthValue = [[self.imageWidth stringValue] intValue];
         int heightValue = (widthValue * [self height]) / [self width];
         NSLog(@"%d, %d, %d", heightValue, self.width, self.height);
@@ -54,7 +81,7 @@
 }
 
 - (IBAction)gipsImage:(id)sender {
-    NSString *imageLocation = [self.imagePath.URL path];
+    NSString *imageLocation = [self.imageURL path];
     NSLog(@"%@", imageLocation);
     
 //    /* Calculating epoch string to use within new file */
@@ -64,20 +91,36 @@
     
 //    [self createCGImageFromFile:imageLocation];
     
-    NSString *newImageLocationPath = [[self.imagePath.URL path] stringByDeletingPathExtension];
+    NSString *newImageLocationPath = [[self.imageURL path] stringByDeletingPathExtension];
 //    NSLog(@"%@", newImageLocationPath);
-    NSString *imageExtension = [self.imagePath.URL pathExtension];
+    NSString *imageExtension = [self.imageURL pathExtension];
     NSString *newImageLocation = [newImageLocationPath stringByAppendingString:[NSString stringWithFormat:@"_gipped(%@x%@).%@", [self.imageHeight stringValue], [self.imageWidth stringValue], imageExtension]];
     NSLog(@"%@", newImageLocation);
     
     NSString *maxHeightWidth = [NSString stringWithFormat:@"%d",MAX([[self imageWidth] intValue], [[self imageHeight] intValue])];
+    NSString *heightWidth = [NSString stringWithFormat:@"%d %d", [[self imageHeight] intValue], [[self imageWidth] intValue]];
+    NSLog(@"%@", heightWidth);
     NSLog(@"%@", maxHeightWidth);
     
     NSMutableArray *arguments = [[NSMutableArray alloc] init];
     [arguments addObject:imageLocation];
     [arguments addObject:newImageLocation];
-    [arguments addObject:maxHeightWidth];
-    [arguments addObject:newImageLocation];
+    
+    if ([self.maintainRatio state]) {
+        [arguments addObject:@"-Z"];
+        [arguments addObject:maxHeightWidth];
+        [arguments addObject:newImageLocation];
+    } else {
+        NSLog(@"Passing: -z %@ %@", heightWidth, newImageLocation);
+        [arguments addObject:@"-z"];
+        [arguments addObject:heightWidth];
+//        [arguments addObject:newImageLocation];
+//        [arguments addObject:@""];
+//        [arguments addObject:maxHeightWidth];
+        [arguments addObject:newImageLocation];
+//        [arguments addObject:@"/Users/moaazsidat/Development/OSX Projects/Gips v0/Test Images/Pensive Parakeet2.jpg"];
+    }
+    
     
     
     
@@ -187,14 +230,14 @@
     // Set height and width values of the textfields
     self.imageHeight.stringValue = [NSString stringWithFormat:@"%d", h];
     self.imageWidth.stringValue = [NSString stringWithFormat:@"%d", w];
+    self.chosenFile.stringValue = [NSString stringWithFormat:@"%@", path];
+    [[self.chosenFile currentEditor] moveToEndOfLine:nil];
     
+    
+    self.imageURL = url;
+    NSImage *myImg = [[NSImage alloc] initWithContentsOfURL:url];
+    self.chosenImage.image = myImg;
     return myImage;
 }
 
-//- (void)setHeightWidth:(NSURL*)url {
-//    NSString *inputFileName = [[self.imagePath.URL lastPathComponent] stringByDeletingPathExtension];
-//    CFURLRef fileurl = CFURLCreateFromFileSystemRepresentation(kCFAllocatorDefault, (const UInt8*), strlen(inputFileName), false);
-//    
-//    
-//}
 @end

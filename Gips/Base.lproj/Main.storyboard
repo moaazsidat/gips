@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15D21" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9060"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -63,11 +63,7 @@
                                                 <action selector="newDocument:" target="Ady-hI-5gd" id="4Si-XN-c54"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Open…" keyEquivalent="o" id="IAo-SY-fd9">
-                                            <connections>
-                                                <action selector="openDocument:" target="Ady-hI-5gd" id="bVn-NM-KNZ"/>
-                                            </connections>
-                                        </menuItem>
+                                        <menuItem title="Open…" keyEquivalent="o" id="IAo-SY-fd9"/>
                                         <menuItem title="Open Recent" id="tXI-mr-wws">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <menu key="submenu" title="Open Recent" systemMenu="recentDocuments" id="oas-Oc-fiZ">
@@ -669,25 +665,19 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="340" height="230"/>
+                        <rect key="frame" x="0.0" y="0.0" width="340" height="250"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eNE-VY-3bp">
-                                <rect key="frame" x="18" y="196" width="84" height="14"/>
-                                <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Choose image:" id="4Xj-T4-bpC">
-                                    <font key="font" metaFont="smallSystem"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                             <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="zx2-oW-5JU">
-                                <rect key="frame" x="20" y="174" width="300" height="5"/>
+                                <rect key="frame" x="20" y="164" width="300" height="5"/>
+                                <animations/>
                                 <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                                 <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <font key="titleFont" metaFont="system"/>
                             </box>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bj5-cJ-LCM">
-                                <rect key="frame" x="245" y="14" width="80" height="28"/>
+                                <rect key="frame" x="245" y="9" width="80" height="28"/>
+                                <animations/>
                                 <buttonCell key="cell" type="push" title="Export" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="JgT-qW-uFB">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="smallSystem"/>
@@ -697,7 +687,8 @@
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="93H-a8-fu0">
-                                <rect key="frame" x="18" y="139" width="75" height="14"/>
+                                <rect key="frame" x="18" y="134" width="75" height="14"/>
+                                <animations/>
                                 <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Custom Size:" id="K8y-Iu-l6T">
                                     <font key="font" metaFont="smallSystem"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -705,7 +696,8 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hu0-7b-4ag">
-                                <rect key="frame" x="108" y="137" width="96" height="19"/>
+                                <rect key="frame" x="108" y="132" width="96" height="19"/>
+                                <animations/>
                                 <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="SAT-7Y-auU">
                                     <font key="font" metaFont="smallSystem"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -716,7 +708,8 @@
                                 </connections>
                             </textField>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O2s-p7-Eed">
-                                <rect key="frame" x="217" y="137" width="96" height="19"/>
+                                <rect key="frame" x="217" y="132" width="96" height="19"/>
+                                <animations/>
                                 <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="dan-AK-fOo">
                                     <font key="font" metaFont="smallSystem"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -727,7 +720,8 @@
                                 </connections>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wb5-OT-cMh">
-                                <rect key="frame" x="137" y="120" width="39" height="14"/>
+                                <rect key="frame" x="137" y="115" width="39" height="14"/>
+                                <animations/>
                                 <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Height" id="vpR-MZ-Atz">
                                     <font key="font" metaFont="smallSystem"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -735,62 +729,72 @@
                                 </textFieldCell>
                             </textField>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lGT-8l-QpK">
-                                <rect key="frame" x="17" y="90" width="176" height="20"/>
-                                <buttonCell key="cell" type="check" title="Maintain original aspect ratio" bezelStyle="regularSquare" imagePosition="left" controlSize="small" enabled="NO" state="on" inset="2" id="tK4-Vp-jqt">
+                                <rect key="frame" x="17" y="85" width="176" height="20"/>
+                                <animations/>
+                                <buttonCell key="cell" type="check" title="Maintain original aspect ratio" bezelStyle="regularSquare" imagePosition="left" controlSize="small" state="on" inset="2" id="tK4-Vp-jqt">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="smallSystem"/>
                                 </buttonCell>
                             </button>
                             <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Ws8-a6-FaV">
-                                <rect key="frame" x="20" y="49" width="300" height="5"/>
+                                <rect key="frame" x="20" y="44" width="300" height="5"/>
+                                <animations/>
                                 <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                                 <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <font key="titleFont" metaFont="system"/>
                             </box>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dnP-P4-IYO">
-                                <rect key="frame" x="17" y="66" width="163" height="20"/>
-                                <buttonCell key="cell" type="check" title="Create a copy" bezelStyle="regularSquare" imagePosition="left" controlSize="small" enabled="NO" state="on" inset="2" id="lhZ-ta-7gz">
+                                <rect key="frame" x="17" y="61" width="206" height="20"/>
+                                <animations/>
+                                <buttonCell key="cell" type="check" title="Create a copy of the original" bezelStyle="regularSquare" imagePosition="left" controlSize="small" enabled="NO" state="on" inset="2" id="lhZ-ta-7gz">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="smallSystem"/>
                                 </buttonCell>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FYO-OP-RnK">
-                                <rect key="frame" x="248" y="120" width="35" height="14"/>
+                                <rect key="frame" x="248" y="115" width="35" height="14"/>
+                                <animations/>
                                 <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Width" id="CuC-G8-xuc">
                                     <font key="font" metaFont="smallSystem"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <pathControl verticalHuggingPriority="750" fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="daR-nQ-9pI">
-                                <rect key="frame" x="105" y="192" width="218" height="22"/>
-                                <pathCell key="cell" controlSize="small" selectable="YES" editable="YES" alignment="left" placeholderString="Choose image" pathStyle="popUp" id="I0I-tF-nYt">
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WPw-gd-XDf">
+                                <rect key="frame" x="78" y="211" width="235" height="19"/>
+                                <animations/>
+                                <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Choose file" drawsBackground="YES" id="RrY-J6-Nu0">
                                     <font key="font" metaFont="smallSystem"/>
-                                    <allowedTypes>
-                                        <string>jpg</string>
-                                        <string>png</string>
-                                        <string>jpeg</string>
-                                        <string>tiff</string>
-                                        <string>psd</string>
-                                        <string>gif</string>
-                                        <string>pict</string>
-                                        <string>bmp</string>
-                                        <string>qtif</string>
-                                        <string>sgi</string>
-                                        <string>tga</string>
-                                    </allowedTypes>
-                                </pathCell>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qdn-Mp-fdp">
+                                <rect key="frame" x="17" y="177" width="56" height="56"/>
+                                <animations/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="LTq-yL-8DW"/>
+                            </imageView>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dhb-yC-uHb" userLabel="Open Button">
+                                <rect key="frame" x="239" y="179" width="79" height="28"/>
+                                <animations/>
+                                <buttonCell key="cell" type="push" title="Open" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="VCs-j6-e8v">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="smallSystem"/>
+                                </buttonCell>
                                 <connections>
-                                    <action selector="fileSelected:" target="XfG-lQ-9wD" id="ufo-fE-pwh"/>
+                                    <action selector="openImage:" target="XfG-lQ-9wD" id="jLV-GI-iKp"/>
                                 </connections>
-                            </pathControl>
+                            </button>
                         </subviews>
+                        <animations/>
                     </view>
                     <connections>
+                        <outlet property="chosenFile" destination="WPw-gd-XDf" id="Nsq-Cm-GFJ"/>
+                        <outlet property="chosenImage" destination="qdn-Mp-fdp" id="36q-a2-FeA"/>
                         <outlet property="exportButton" destination="bj5-cJ-LCM" id="ExW-2a-6Aa"/>
                         <outlet property="imageHeight" destination="Hu0-7b-4ag" id="yk4-RD-PFU"/>
-                        <outlet property="imagePath" destination="daR-nQ-9pI" id="uQW-D5-kob"/>
                         <outlet property="imageWidth" destination="O2s-p7-Eed" id="KRw-UG-Q4G"/>
+                        <outlet property="maintainRatio" destination="lGT-8l-QpK" id="ReG-OI-El0"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

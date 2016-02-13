@@ -22,4 +22,10 @@
     // Insert code here to tear down your application
 }
 
+- (BOOL)application:(NSApplication *)sender openFile:(NSString *)filename {
+    NSLog(@"Filename via Open file: %@", filename);
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"openFileWithApp" object:filename];
+    return YES;
+}
+
 @end
