@@ -8,7 +8,7 @@
 }
 
 header {
-  padding: 40px 40px 40px 0;
+  padding: 32px 32px 32px 0;
   width: 100%;
   margin: auto;
   text-align: center;
@@ -60,4 +60,21 @@ h2 {
 .announcement {
   font-size: 18px;
   font-weight: 500;
+}
+
+.button {
+  padding: 8px 16px;
+  border: 2px solid #999;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #999;
+
+  &:hover {
+    border-color: #333;
+    color: #333;
+  }
+}
+
+.mt1 {
+  margin-top: 1em;
 }
