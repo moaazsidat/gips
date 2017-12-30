@@ -22,18 +22,13 @@
 
     // Update the view, if already loaded.
 }
+
 - (BOOL) openFileWithApp:(NSNotification *)notification {
     NSString *imageLocation = [notification object];
     NSLog(@"Yaaay");
     [self createCGImageFromFile:imageLocation];
     return YES;
 }
-//- (IBAction)fileSelected:(id)sender {
-//    NSString *imageLocation = [self.imagePath.URL path];
-//    NSLog(@"%@", imageLocation);
-//    
-//    [self createCGImageFromFile:imageLocation];
-//}
 
 - (IBAction)openImage:(id)sender {
     NSOpenPanel *panel = [NSOpenPanel openPanel];
@@ -44,6 +39,7 @@
             NSURL *imagePath = [[panel URLs] objectAtIndex:0];
             self.imageURL = imagePath;
             NSString *imageLocation = [imagePath path];
+            
             // Open  the document.
             NSLog(@"Open file panel: %@", imageLocation);
             [self createCGImageFromFile:imageLocation];
@@ -122,7 +118,7 @@
     }
     [self runScript:arguments];
     
-    /* Send notification to NotificationCenter */
+    // Send notification to NotificationCenter
     NSUserNotification *notification = [[NSUserNotification alloc] init];
     notification.title = [NSString stringWithFormat:@"Resizing %@", imageName];
     notification.informativeText = [NSString stringWithFormat:
@@ -154,7 +150,13 @@
             [self.gipsTask waitUntilExit];
         }
         @catch (NSException *exception) {
-            NSLog(@"Problem running task: %@", [exception description]);
+//            NSLog(@"Problem running task: %@", [exception description]);
+            NSAlert *alert = [[NSAlert alloc] init];
+            [alert addButtonWithTitle:@"OK"];
+            [alert setMessageText:@"Oops, something went wrong"];
+            [alert setInformativeText:@"Please contact the developer of Gips at moaazsidat@gmail.com for support."];
+            [alert setAlertStyle:NSWarningAlertStyle];
+            [alert runModal];
         }
         
         @finally {

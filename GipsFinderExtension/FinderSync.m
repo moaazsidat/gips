@@ -29,16 +29,29 @@
 //    [[FIFinderSyncController defaultController] setBadgeImage:[NSImage imageNamed: NSImageNameColorPanel] label:@"Status One" forBadgeIdentifier:@"One"];
 //    [[FIFinderSyncController defaultController] setBadgeImage:[NSImage imageNamed: NSImageNameCaution] label:@"Status Two" forBadgeIdentifier:@"Two"];
     
+    //    self.myFolderURL = [sharedDefaults URLForKey:MyFolderKey];
+    
     // Set up the folder we are syncing
     NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"com.moaaz.Gips"];
     
-//    self.myFolderURL = [sharedDefaults URLForKey:MyFolderKey];
-    
     if (self.myFolderURL == nil) {
-        self.myFolderURL = [NSURL fileURLWithPath:[@"~/Pictures/GipsFinderExtension" stringByExpandingTildeInPath]];;
+        self.myFolderURL = [NSURL fileURLWithPath:[@"~/Pictures/GipsFinderExtension" stringByExpandingTildeInPath]];
     }
-
+    
     [FIFinderSyncController defaultController].directoryURLs = [NSSet setWithObject:self.myFolderURL];
+    
+//    NSLog(@"Self myfolderURL: %@", self.myFolderURL);
+//    
+//    NSURL *myURL = [NSURL fileURLWithPath:[@"~/Pictures" stringByExpandingTildeInPath]];
+//    NSLog(@"fileURLWithPath: %@", myURL);
+//    
+//    NSURL *picturesURL = [NSURL fileURLWithPath:[@"~/Pictures" stringByExpandingTildeInPath]];
+//    NSURL *picturesURL2 = [NSURL fileURLWithPath:[@"~/Pictures/Room" stringByExpandingTildeInPath]];
+//    NSURL *documentsURL = [NSURL fileURLWithPath:[@"~/Pictures/GipsFinderExtension" stringByExpandingTildeInPath]];
+//    NSURL *musicURL = [NSURL fileURLWithPath:[@"~/Music/iTunes" stringByExpandingTildeInPath]];
+//
+//    
+//    [FIFinderSyncController defaultController].directoryURLs = [NSSet setWithObjects:picturesURL, picturesURL2, documentsURL, musicURL, nil];
     
     return self;
 }
@@ -89,7 +102,7 @@
         [selectedItemPaths addObject:[selectedItemURL path]];
     }
     
-    NSLog(@"%@", selectedItemPaths);
+    NSLog(@"Selected item path: %@", selectedItemPaths);
     
     // Produce a menu for the extension.
     NSMenu *menu = [[NSMenu alloc] initWithTitle:@""];

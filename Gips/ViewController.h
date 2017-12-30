@@ -20,8 +20,6 @@
 @property (weak) IBOutlet NSImageView *chosenImage;
 
 /* Actions */
-
-//- (IBAction)fileSelected:(id)sender;
 - (IBAction)openImage:(id)sender;
 - (IBAction)heightChanged:(id)sender;
 - (IBAction)widthChanged:(id)sender;
